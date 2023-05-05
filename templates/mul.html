@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiply</title>
+</head>
+<body>
+    <h1>Multiplying Multidimension Array</h1>
+    <form method="POST">
+      <label for="x">Array X:</label>
+      <input type="text" name="x" id="x"><br>
+      <label for="y">Array Y:</label>
+      <input type="text" name="y" id="y"><br>
+      <input type="submit" value="Multiply">
+    </form>
+    {% if result is defined %}
+      <h2>Result:</h2>
+      <pre>{{ result }}</pre>
+    {% endif %}
+  <a href="/">Go to Plotting Single Dimension Array Page</a>
+  </body>
+</html>

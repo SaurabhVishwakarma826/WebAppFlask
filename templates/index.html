@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Plotting Single Dimension Array</title>
+  </head>
+  <body>
+    <h1>Plotting Single Dimension Array</h1>
+    <form method="POST">
+      <label for="array1">Array 1:</label>
+      <input type="text" name="array1" id="array1"><br>
+      <label for="array2">Array 2:</label>
+      <input type="text" name="array2" id="array2"><br>
+      <input type="submit" value="Plot">
+    </form>
+    {% if plot_data %}
+      <img src="data:image/png;base64,{{ plot_data }}" alt="Plot">
+    {% endif %}
+  <a href="{{ url_for('multiply') }}">Go to Multiply Page</a>
+  </body>
+</html>

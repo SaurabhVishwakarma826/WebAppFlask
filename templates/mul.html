@@ -3,20 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Multiply</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@400;900&family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Multiplying Multidimension Array</h1>
+
+  <div class="hyp">
+    <a href="/">Go to Plotting Single Dimension Array Page</a>
+  </div>
+    <h1 class="single">Multiplying Multidimension Array</h1>
+    <div class="container">
+      <div class="container-1">
+        <div class="box-1">
+          <h3 class="array-enter">For Multiplication of a and b matrix</h3>   
+          <h3 class="array-enter">a to be entered in the for 2-D array, e.g.[[1,1,1];[1,1,1];[1,1,1]]</h3>
+          <h3 class="array-enter">b to be entered in the for 2-D array, e.g.[[1,1,1];[1,1,1];[1,1,1]]</h3>      
+        </div>
+    <div class="box-2">
     <form method="POST">
-      <label for="x">Array X:</label>
-      <input type="text" name="x" id="x"><br>
-      <label for="y">Array Y:</label>
-      <input type="text" name="y" id="y"><br>
-      <input type="submit" value="Multiply">
+      <label for="x" class="x-1">Entered the Value for x</label>
+      <input type="text" name="x" id="x" class="x-1"><br>
+      <label for="y" class="x-1">Entered the Value for y</label>
+      <input type="text" name="y" id="y" class="x-1"><br>
+      <input type="submit" value="Multiply" class="btn">
     </form>
+  </div>
+  </div>
+
+<div class="container-2">
+  <div class="box-4">
     {% if result is defined %}
-      <h2>Result:</h2>
+      <h3>Multiplication Result:</h3>
       <pre>{{ result }}</pre>
     {% endif %}
-  <a href="/">Go to Plotting Single Dimension Array Page</a>
+  </div>
+</div>
+</div>
+<div class="error">
+  {% if error_msg %}
+  <div class="alert alert-danger">{{ error_msg }}</div>
+{% endif %}
+</div>
   </body>
 </html>

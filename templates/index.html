@@ -2,19 +2,50 @@
 <html>
   <head>
     <title>Plotting Single Dimension Array</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@400;900&family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
   </head>
   <body>
-    <h1>Plotting Single Dimension Array</h1>
-    <form method="POST">
-      <label for="array1">Array 1:</label>
-      <input type="text" name="array1" id="array1"><br>
-      <label for="array2">Array 2:</label>
-      <input type="text" name="array2" id="array2"><br>
-      <input type="submit" value="Plot">
-    </form>
-    {% if plot_data %}
-      <img src="data:image/png;base64,{{ plot_data }}" alt="Plot">
-    {% endif %}
-  <a href="{{ url_for('multiply') }}">Go to Multiply Page</a>
+    <div class="hyp">
+    <a href="{{ url_for('multiply') }}">Go to Matrix Multiplication Page</a>
+    </div>
+    <h1 class="single">Plotting Single Dimension Array</h1>
+   
+  <div class="container">
+    <div class="container-1">
+      <div class="box-1">
+        <h3 class="array-enter">To plot x vs y</h3>   
+        <h3 class="array-enter">x to entered as an array, e.g.[1,2,3,4]</h3>
+        <h3 class="array-enter">y to entered as an array, e.g.[1,4,9,16]</h3>      
+      </div>
+        <div class="box-2">
+          <form method="POST">
+            <label for="array1" class="x-1">Entered the Value for x</label>
+            <input type="text" name="array1" id="array1" class="x-1"><br>
+            <label for="array2" class="x-1">Entered the Value for y</label>
+            <input type="text" name="array2" id="array2" class="x-1"><br>
+            <input type="submit" value="Plot" class="btn">
+          </form>
+        </div>
+    </div>
+    <div class="container-2">
+      <div class="box-3">
+        {% if plot_data %}
+         <img src="data:image/png;base64,{{ plot_data }}" alt="Plot">
+        {% endif %}
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="error">
+    {% if error_msg %}
+    <div class="alert alert-danger">{{ error_msg }}</div>
+  {% endif %}
+  </div>
+    
+    
+
   </body>
 </html>
